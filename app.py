@@ -31,7 +31,7 @@ matches_data = {
         ("Goal", 110.04, 36.68, 0.12, 0.96, 0.62, "videos/1 - CT.mp4"),
     ],
     "Vs Nashville": [
-        ("Goal", 106.88, 21.71, 0.12, 2.63, 0.78, "videos/1 - NS.mp4"),
+        ("On Target", 106.88, 21.71, 0.12, 2.63, 0.78, "videos/1 - NS.mp4"),
     ],
     "Vs Red Bull": [
         ("Goal", 104.22, 49.31, 0.12, 1.20, 1.61, "videos/1 - RB.mp4"),
