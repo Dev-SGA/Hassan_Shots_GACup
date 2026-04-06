@@ -28,17 +28,17 @@ GOAL_HEIGHT = 2.44
 # ==========================
 matches_data = {
     "Vs Connecticut": [
-        ("Goal", 110.04, 36.68, 0.12, 0.96, 0.62, "videos/1 - CT.mp4"),
+        ("Goal", 110.04, 36.68, 0.34, 0.96, 0.62, "videos/1 - CT.mp4"),
     ],
     "Vs Nashville": [
-        ("On Target", 106.88, 21.71, 0.12, 2.63, 0.78, "videos/1 - NS.mp4"),
+        ("Goal", 106.88, 21.71, 0.05, 2.63, 0.78, "videos/1 - NS.mp4"),
     ],
     "Vs Red Bull": [
-        ("Goal", 104.22, 49.31, 0.12, 1.20, 1.61, "videos/1 - RB.mp4"),
+        ("Goal", 104.22, 49.31, 0.13, 1.20, 1.61, "videos/1 - RB.mp4"),
     ],
     "Vs Seattle": [
         ("Blocked", 99.90, 34.51, 0.06, None, None, "videos/1 - ST.mp4"),
-        ("Blocked", 93.08, 36.51, 0.05, None, None, "videos/2 - ST.mp4"),
+        ("Blocked", 93.08, 36.51, 0.09, None, None, "videos/2 - ST.mp4"),
     ],
 }
 
@@ -155,6 +155,22 @@ st.sidebar.divider()
 st.sidebar.caption("Match filtered by selected options above")
 
 df = df_base[df_base["type"].isin(selected_results)].copy()
+
+# ==========================
+# Stats Bar
+# ==========================
+st.subheader("📊 Stats")
+
+total_shots = len(df)
+total_goals = len(df[df["type"].str.upper() == "GOAL"])
+total_xg = df["xg"].sum()
+
+col_s1, col_s2, col_s3 = st.columns(3)
+col_s1.metric("⚽ Goals", total_goals)
+col_s2.metric("🥅 Shots", total_shots)
+col_s3.metric("📈 Total xG", f"{total_xg:.2f}")
+
+st.divider()
 
 # ==========================
 # Main Layout
