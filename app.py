@@ -31,7 +31,7 @@ matches_data = {
         ("Goal", 110.04, 36.68, 0.34, 0.96, 0.62, "videos/1 - CT.mp4"),
     ],
     "Vs Nashville": [
-        ("Goal", 106.88, 21.71, 0.05, 2.63, 0.78, "videos/1 - NS.mp4"),
+        ("On Target", 106.88, 21.71, 0.05, 2.63, 0.78, "videos/1 - NS.mp4"),
     ],
     "Vs Red Bull": [
         ("Goal", 104.22, 49.31, 0.13, 1.20, 1.61, "videos/1 - RB.mp4"),
@@ -164,11 +164,13 @@ st.subheader("📊 Stats")
 total_shots = len(df)
 total_goals = len(df[df["type"].str.upper() == "GOAL"])
 total_xg = df["xg"].sum()
+xg_diff = total_xg - total_goals
 
-col_s1, col_s2, col_s3 = st.columns(3)
+col_s1, col_s2, col_s3, col_s4 = st.columns(4)
 col_s1.metric("⚽ Goals", total_goals)
 col_s2.metric("🥅 Shots", total_shots)
 col_s3.metric("📈 Total xG", f"{total_xg:.2f}")
+col_s4.metric("📊 xG - Goals", f"{xg_diff:+.2f}")
 
 st.divider()
 
