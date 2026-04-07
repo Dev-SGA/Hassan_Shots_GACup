@@ -164,7 +164,7 @@ st.subheader("📊 Stats")
 total_shots = len(df)
 total_goals = len(df[df["type"].str.upper() == "GOAL"])
 total_xg = df["xg"].sum()
-xg_diff = total_xg - total_goals
+xg_diff = total_goals - total_xg
 
 col_s1, col_s2, col_s3, col_s4 = st.columns(4)
 col_s1.metric("⚽ Goals", total_goals)
