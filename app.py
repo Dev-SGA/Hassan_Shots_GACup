@@ -170,7 +170,7 @@ col_s1, col_s2, col_s3, col_s4 = st.columns(4)
 col_s1.metric("⚽ Goals", total_goals)
 col_s2.metric("🥅 Shots", total_shots)
 col_s3.metric("📈 Total xG", f"{total_xg:.2f}")
-col_s4.metric("📊 xG - Goals", f"{xg_diff:+.2f}")
+col_s4.metric("📊 Goals - xG", f"{xg_diff:+.2f}")
 
 st.divider()
 
