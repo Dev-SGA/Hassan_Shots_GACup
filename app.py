@@ -28,7 +28,7 @@ GOAL_HEIGHT = 2.44
 # ==========================
 matches_data = {
     "Vs Connecticut": [
-        ("Goal", 110.04, 36.68, 0.34, 0.96, 0.62, "videos/1 - CT.mp4"),
+        ("Goal", 110.04, 36.68, 0.34, 0.96, 0.62, "videos/1 - CN.mp4"),
     ],
     "Vs Nashville": [
         ("On Target", 106.88, 21.71, 0.05, 2.63, 0.78, "videos/1 - NS.mp4"),
